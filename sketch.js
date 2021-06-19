@@ -52,7 +52,7 @@ function draw() {
   fedTime.on("value",function(data){lastFed = data.val()})
  
   //write code to display text lastFed time here
-  if (time >12){
+  if (time >=13){
     pm = time-12;
     database.ref('/').update({FeedTime:time})
   }
@@ -94,7 +94,7 @@ function feedDog(){
   if(time === 24 ){
     time = 1;
     database.ref('/').update({FeedTime:time})
-  }else if (time >12){
+  }else if (time >=13){
     pm = time-12;
     database.ref('/').update({FeedTime:time})
   }
